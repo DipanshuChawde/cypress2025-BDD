@@ -1,0 +1,40 @@
+comands to install cypress
+npm init
+npm install cypress --save-dev
+npm install npx(optional)
+npx cypress open
+
+npm install --save-dev cypress-cucumber-preprocessor
+
+----------
+cypress.config.js
+
+const { defineConfig } = require("cypress");
+const cucumber = require("cypress-cucumber-preprocessor").default;
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+      on("file:preprocessor", cucumber());
+    },
+  },
+});
+
+----------------------------------------
+package.json
+
+“cypress-cucumber-preprocessor”: {
+“nonGlobalStepDefinitions”: false,
+"step-definitions" : "cypress/e2e/3-BDD"
+}
+
+-----------------------------------------------
+
+https://qaautomationlabs.com/cypress-13-integration-with-bdd-cucumber-pom/
+npm install --save-dev cypress-cucumber-preprocessor
+
+----------------------------------------------------------
+TAGS
+
+npx cypress run --e2e --env TAGS='@smoke' --browser edge --headed
+npx cypress run --e2e --env TAGS='@smoke or @sanity' --browser edge --headed 
