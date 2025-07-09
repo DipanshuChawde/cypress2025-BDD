@@ -28,3 +28,18 @@ userData.hashes().forEach(data =>{
     cy.get('[name="message"]').type(data.msg)
 })
 })
+
+//scenario 3
+When("I enter data for all input-fields for {string} ,{string},{string},{string}",(fn,ln,em,mg)=>{
+    cy.get('[name="first_name"]').type(fn)
+    cy.get('[name="last_name"]').type(ln)
+    cy.get('[name="email"]').type(em)
+    cy.get('[name="message"]').type(mg)
+})
+
+When("I enter data for all input-fields for --{word} ,{word},{string},{string}",(fn,ln,em,mg)=>{
+    cy.get('[name="first_name"]').type(fn)
+    cy.get('[name="last_name"]').type(ln)
+    cy.get('[name="email"]').type(em)
+    cy.get('[name="message"]').type(mg)
+})
