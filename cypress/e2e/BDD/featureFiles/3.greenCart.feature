@@ -11,5 +11,5 @@ Feature: Verify green cart web page to add multilple product
         Examples:
             | searchBox | ProductsToAdd   |
             | ca        | Carrot,Capsicum |
-            # | al        | Brinjal,Almonds |
-            # | ap        | Apple           |
+            | al        | Brinjal,Almonds |
+            | ap        | Apple           |
